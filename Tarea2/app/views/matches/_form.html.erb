@@ -1,0 +1,61 @@
+<%= form_for(@match) do |f| %>
+  <% if @match.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@match.errors.count, "error") %> prohibited this match from being saved:</h2>
+
+      <ul>
+      <% @match.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :fecha %><br>
+    <%= f.date_select :fecha %>
+  </div>
+  <div class="field">
+    <%= f.label :fase_id %><br>
+    <%= f.text_field :fase_id %>
+  </div>
+  <div class="field">
+    <%= f.label :estado_id %><br>
+    <%= f.text_field :estado_id %>
+  </div>
+  <div class="field">
+    <%= f.label :local_team_id %><br>
+    <%= f.text_field :local_team_id %>
+  </div>
+  <div class="field">
+    <%= f.label :visit_team_id %><br>
+    <%= f.text_field :visit_team_id %>
+  </div>
+  <div class="field">
+    <%= f.label :marcador %><br>
+    <%= f.text_field :marcador %>
+  </div>
+  <div class="field">
+    <%= f.label :ganador_team_id %><br>
+    <%= f.text_field :ganador_team_id %>
+  </div>
+  <div class="field">
+    <%= f.label :perdedor_team_id %><br>
+    <%= f.text_field :perdedor_team_id %>
+  </div>
+  <div class="field">
+    <%= f.label :empate %><br>
+    <%= f.check_box :empate %>
+  </div>
+  <div class="field">
+    <%= f.label :group_id %><br>
+    <%= f.text_field :group_id %>
+  </div>
+  <div class="field">
+    <%= f.label :stadium_id %><br>
+    <%= f.text_field :stadium_id %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>
